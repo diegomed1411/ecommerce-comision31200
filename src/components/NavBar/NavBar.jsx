@@ -2,7 +2,9 @@ import React from 'react'
 import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import './NavBar.css'
 import logo from '../../assets/static/logo_avion.png'
-import balija from '../../assets/static/icono_equipaje.png'
+import CartWidjet from '../CartWidget/CartWidjet';
+import ItemListContainer from '../ItemListContainer/ItemListContainer';
+
 
 const NavBar = () => {
   return (
@@ -33,14 +35,13 @@ const NavBar = () => {
           </NavDropdown.Item>
         </NavDropdown>
       </Nav>
-      <div>
-      <img src= {balija} alt="balija de compras" id="balija" />
-      </div>
+      <CartWidjet />
     </Navbar.Collapse>
   </Container>
 </Navbar>
     </>
   )
 }
+
 
 export default NavBar

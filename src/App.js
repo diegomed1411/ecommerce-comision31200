@@ -3,11 +3,13 @@ import './App.css';
 import NavBar from './components/NavBar/NavBar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
+      <ItemListContainer greeting = "Mensaje de bienvenida, este es el Item List Container" />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
