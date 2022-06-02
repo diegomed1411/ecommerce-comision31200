@@ -4,12 +4,14 @@ import NavBar from './components/NavBar/NavBar';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemCount from './components/ItemCount/ItemCount';
 
 function App() {
   return (
     <div className="App">
       <NavBar />
       <ItemListContainer greeting = "Mensaje de bienvenida, este es el Item List Container" />
+      <ItemCount stock="5" initial ="1"/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
