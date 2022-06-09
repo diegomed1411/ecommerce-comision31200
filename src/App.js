@@ -1,31 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
-import NavBar from './components/NavBar/NavBar';
+import logo from "./logo.svg";
+import "./App.css";
+import NavBar from "./components/NavBar/NavBar";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import ItemCount from './components/ItemCount/ItemCount';
+import "bootstrap/dist/css/bootstrap.min.css";
+import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemCount from "./components/ItemCount/ItemCount";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer greeting = "Mensaje de bienvenida, este es el Item List Container" />
-      <ItemCount stock="5" initial ="1"/>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route
+            index
+            path="/"
+            element={
+              <ItemListContainer greeting="Mensaje de bienvenida, este es el Item List Container" />
+            }
+          />
+          <Route path="/detalle" element={<ItemCount stock="5" initial="1" />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
