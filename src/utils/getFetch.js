@@ -1,10 +1,12 @@
 const items = [
     {
       id: 1,
-      title: "Articulo 1",
-      description: "descripcion articulo 1",
-      price: 100,
-      pictureUrl: "url1",
+      title: "Valija Mediana 24¨ Premium",
+      shortDescription: "Para viajeros que van a comprar y necesitan espacio, ideal para viajes largos.",
+      description: "Material liviano ABS (2,8 mm de espesor), flexible que resiste golpes y caídas.Manija de aluminio (0,8 mm de espesor). Cuatro ruedas giratorias 360 ° reforzadas de nylon GF. Silenciosas, resistentes a la fricción y de alto impacto.Candado TSA para una inspección personalizada sin romper el bloqueo, más fuerte que el candado combinado.Revestimiento interior de alta densidad 210D, malla con bolsillo y 2 bolsillos y separaciones de servicio. Fuelle expansible",
+      price: 3990,
+      category: "valijas",
+      pictureUrl: "../assets/static/icono_equipaje.png",
     },
     {
       id: 2,
@@ -40,7 +42,7 @@ const items = [
     return new Promise((resolve) => {
       setTimeout(() => {
         resolve(items);
-      }, 5000);
+      }, 3000);
     });
   };
 

@@ -3,7 +3,6 @@ import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import './NavBar.css'
 import logo from '../../assets/static/logo_avion.png'
 import CartWidjet from '../CartWidget/CartWidjet';
-import ItemListContainer from '../ItemListContainer/ItemListContainer';
 
 
 const NavBar = () => {

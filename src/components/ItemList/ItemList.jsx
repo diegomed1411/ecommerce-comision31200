@@ -5,7 +5,7 @@ import getFetch from "../../utils/getFetch";
 
 
 
-const ItemList = (items) => {
+const ItemList = () => {
   const [productos, setProductos] = useState([]);
 
   useEffect(() => {
@@ -25,7 +25,9 @@ const ItemList = (items) => {
             id={producto.id}
             title={producto.title}
             description={producto.description}
+            shortDescription={producto.shortDescription}
             price={producto.price}
+            pictureUrl = {producto.productoUrl}
           />
         ))}
       </div>
