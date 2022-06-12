@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ItemDetail = () => {
+const ItemDetail = (item) => {
   return (
     <>
     <div className="container-fluid">
@@ -11,7 +11,7 @@ const ItemDetail = () => {
 					<div className="product col-md-3 service-image-left">
                     
 						<center>
-							<img id="item-display" src="http://www.corsair.com/Media/catalog/product/g/s/gs600_psu_sideview_blue_2.png" alt=""></img>
+							<img id="item-display" src={item.pictureUrl} alt=""></img>
 						</center>
 					</div>
 					
@@ -31,8 +31,8 @@ const ItemDetail = () => {
 				</div>
 					
 				<div className="col-md-7">
-					<div className="product-title">Corsair GS600 600 Watt PSU</div>
-					<div className="product-desc">The Corsair Gaming Series GS600 is the ideal price/performance choice for mid-spec gaming PC</div>
+					<div className="product-title">{item.title}</div>
+					<div className="product-desc">{item.description}</div>
 					<div className="product-rating"><i className="fa fa-star gold"></i> <i className="fa fa-star gold"></i> <i className="fa fa-star gold"></i> <i className="fa fa-star gold"></i> <i className="fa fa-star-o"></i> </div>
 					<hr />
 					<div className="product-price">$ 1234.00</div>

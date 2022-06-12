@@ -7,14 +7,11 @@ import getFetch from "../../utils/getFetch";
 
 const ItemList = () => {
   const [productos, setProductos] = useState([]);
-
   useEffect(() => {
     getFetch()
       .then((resp) => setProductos(resp))
       .catch((err) => console.log(err));
   }, []);
-
-  console.log(productos);
 
   return (
     <>
