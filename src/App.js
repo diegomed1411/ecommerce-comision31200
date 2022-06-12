@@ -24,7 +24,7 @@ function App() {
           <Route path="/detalle" element={<ItemCount stock="5" initial="1" />} />
         </Routes>
       </BrowserRouter>
-      <ItemDetailContainer item="3" />
+      <ItemDetailContainer item= "3" />
     </div>
   );
 }

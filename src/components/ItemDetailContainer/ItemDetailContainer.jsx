@@ -3,18 +3,21 @@ import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import getFetch from "../../utils/getFetch";
 
-const ItemDetailContainer = (item) => {
-  const [productosTotales, setProductosTotales] = useState([]);
-  const [detalle, setDetalle] = useState([]);
+const ItemDetailContainer = (props) => {
+const [productos, setProductos] = useState([]);
+const [detalle, setDetalle] = useState([]);
 
 useEffect(() => {
     getFetch()
-      .then((resp) => setDetalle(resp.filter(p=> p.id == item)))
-      //.then(setDetalle(productosTotales.filter(p => p.id === item)))
+      .then((resp) => setProductos(resp))
+      .then(setDetalle(productos.filter(p=> p.id == parseInt(props.item))))
+      .then(setDetalle(detalle[0]))
       .catch((err) => console.log(err));
   }, []);
 
-  console.log(detalle)
+
+
+  console.log(productos, detalle)
 
   return (
     <>
