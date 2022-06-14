@@ -47,10 +47,10 @@ const items = [
 
   ];
   
-  const getFetch = () => {
+  const getFetch = (art) => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        resolve(items);
+        art? resolve(items.find(element => element.id == art)) :resolve(items);
       }, 3000);
     });
   };

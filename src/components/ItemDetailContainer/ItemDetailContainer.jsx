@@ -4,20 +4,15 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import getFetch from "../../utils/getFetch";
 
 const ItemDetailContainer = (props) => {
-const [productos, setProductos] = useState([]);
 const [detalle, setDetalle] = useState([]);
 
 useEffect(() => {
-    getFetch()
-      .then((resp) => setProductos(resp))
-      .then(setDetalle(productos.filter(p=> p.id == parseInt(props.item))))
-      .then(setDetalle(detalle[0]))
-      .catch((err) => console.log(err));
-  }, []);
+  getFetch(props.item)
+    .then((resp) => setDetalle(resp))
+    .catch((err) => console.log(err));
+}, []);
 
-
-
-  console.log(productos, detalle)
+  console.log(detalle)
 
   return (
     <>
