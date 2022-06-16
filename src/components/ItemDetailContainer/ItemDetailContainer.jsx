@@ -2,12 +2,14 @@ import React from "react";
 import { useEffect, useState } from "react";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import getFetch from "../../utils/getFetch";
+import { useParams } from "react-router-dom";
 
-const ItemDetailContainer = (props) => {
+const ItemDetailContainer = () => {
 const [detalle, setDetalle] = useState([]);
+const { id } = useParams()
 
 useEffect(() => {
-  getFetch(props.item)
+  getFetch(parseInt(id))
     .then((resp) => setDetalle(resp))
     .catch((err) => console.log(err));
 }, []);
@@ -18,12 +20,7 @@ useEffect(() => {
     <>
       <ItemDetail
         key={detalle.id}
-        id={detalle.id}
-        title={detalle.title}
-        description={detalle.description}
-        shortDescription={detalle.shortDescription}
-        price={detalle.price}
-        pictureUrl={detalle.detalleUrl}
+        item = {detalle}
       /> 
     </>
   );

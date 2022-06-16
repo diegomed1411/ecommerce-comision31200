@@ -3,6 +3,8 @@ import {Container, Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import './NavBar.css'
 import logo from '../../assets/static/logo_avion.png'
 import CartWidjet from '../CartWidget/CartWidjet';
+import { NavLink } from 'react-router-dom';
+
 
 
 const NavBar = () => {
@@ -10,7 +12,7 @@ const NavBar = () => {
     <>
     <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="#">
+    <Navbar.Brand href="/">
       <img src= {logo} alt="logo de avion" id="logo" />
       Tienda Viajes
     </Navbar.Brand>
@@ -23,18 +25,25 @@ const NavBar = () => {
       >
         <Nav.Link href="/">Home</Nav.Link>
         <Nav.Link href="/detalle">Articulos</Nav.Link>
-        <NavDropdown title="Destinos" id="navbarScrollingDropdown">
-          <NavDropdown.Item href="#action3">Asia</NavDropdown.Item>
-          <NavDropdown.Item href="#action4">Europa</NavDropdown.Item>
-          <NavDropdown.Item href="#action5">America</NavDropdown.Item>
-          <NavDropdown.Item href="#action6">Africa</NavDropdown.Item>
+        <NavDropdown title="Categorias" id="navbarScrollingDropdown">
+            <NavLink to="/categoria/valijas">
+            <NavDropdown.Item >Valijas</NavDropdown.Item>
+            </NavLink>
+            <NavLink to="/categoria/mochilas">
+            <NavDropdown.Item >mochilas</NavDropdown.Item>
+            </NavLink>
+
+
           <NavDropdown.Divider />
           <NavDropdown.Item href="#action7">
             Ver más destinos
           </NavDropdown.Item>
         </NavDropdown>
       </Nav>
-      <CartWidjet />
+      <NavLink to="/cart">
+        <CartWidjet />
+      </NavLink>
+      
     </Navbar.Collapse>
   </Container>
 </Navbar>

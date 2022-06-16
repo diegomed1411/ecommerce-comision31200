@@ -1,14 +1,14 @@
 import React from "react";
 import "./Item.css";
 import { Button, Card } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 
-const Item = (item) => {
+const Item = ({item}) => {
   return (
     <>
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={item.pictureUrl} />
-        <img src={item.pictureUrl} alt="" />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>
@@ -20,7 +20,10 @@ const Item = (item) => {
           <Card.Text>
             {item.id}
           </Card.Text>
+          <Link to={`/detalle/${item.id}`}>
           <Button variant="primary">Ver Detalles</Button>
+          </Link>
+
         </Card.Body>
       </Card>
     </>

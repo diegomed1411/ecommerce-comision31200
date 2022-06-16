@@ -50,8 +50,8 @@ const items = [
   const getFetch = (art) => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        art? resolve(items.find(element => element.id == art)) :resolve(items);
-      }, 3000);
+        art? resolve(items.find(element => element.id === art)) :resolve(items);
+      }, 1500);
     });
   };
 

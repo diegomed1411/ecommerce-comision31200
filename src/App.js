@@ -1,12 +1,12 @@
-import logo from "./logo.svg";
 import "./App.css";
-import NavBar from "./components/NavBar/NavBar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
+import NavBar from "./components/NavBar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-import ItemCount from "./components/ItemCount/ItemCount";
+
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Cart from "./components/Cart/Cart";
 
 function App() {
   return (
@@ -14,17 +14,12 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Routes>
-          <Route
-            index
-            path="/"
-            element={
-              <ItemListContainer greeting="Mensaje de bienvenida, este es el Item List Container" />
-            }
-          />
-          <Route path="/detalle" element={<ItemCount stock="5" initial="1" />} />
+          <Route index path="/" element={<ItemListContainer greeting="hola"/>} />
+          <Route index path="/categoria/:categoriaId" element={<ItemListContainer />} />
+          <Route path="/detalle/:id" element={<ItemDetailContainer />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
-      <ItemDetailContainer item= "2" />
     </div>
   );
 }
