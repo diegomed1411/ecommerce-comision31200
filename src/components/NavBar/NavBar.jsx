@@ -24,8 +24,9 @@ const NavBar = () => {
         navbarScroll
       >
         <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/detalle">Articulos</Nav.Link>
-        <NavDropdown title="Categorias" id="navbarScrollingDropdown">
+        <Nav.Link href="/categoria/valijas">Valijas</Nav.Link>
+        <Nav.Link href="/categoria/mochilas">Mochilas</Nav.Link>
+        <NavDropdown title="otros sin usar" id="navbarScrollingDropdown">
             <NavLink to="/categoria/valijas">
             <NavDropdown.Item >Valijas</NavDropdown.Item>
             </NavLink>
