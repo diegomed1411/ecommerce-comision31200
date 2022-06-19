@@ -1,6 +1,10 @@
-import React from "react";
+import React, {useState} from "react";
+import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({item}) => {
+  const onAdd= (cantidad)=>{
+    console.log(cantidad)
+  } 
   return (
     <>
       <div className="container-fluid">
@@ -19,20 +23,17 @@ const ItemDetail = ({item}) => {
                 <div className="product-title">{item.title}</div>
                 <div className="product-desc">{item.description}</div>
                 <hr />
-                <div className="product-price">{item.price}</div>
-                <div className="product-stock">{item.id}</div>
+                <div className="product-price"><span>Precio </span>{item.price}</div>
+                <div className="product-stock"><span>Stock </span>{item.stock}</div>
                 <hr />
                 <div className="btn-group cart">
-                  <button type="button" className="btn btn-success">
-                    Add to cart
-                  </button>
+                <ItemCount price= {item.price} stock={item.stock} initial = "0" onAdd={onAdd}/>
                 </div>
-                <div className="btn-group wishlist">
-                  <button type="button" className="btn btn-danger">
-                    Add to wishlist
-                  </button>
-                </div>
+                
               </div>
+
+              
+
             </div>
           </div>
         </div>

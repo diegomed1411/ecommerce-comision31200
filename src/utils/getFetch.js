@@ -7,6 +7,7 @@ const items = [
       price: 3990,
       category: "valijas",
       pictureUrl: "https://cdn.shopify.com/s/files/1/0121/1849/1193/products/DEMOTROTAMUNDOS220801-1_8c470683-f137-4d64-a55c-40a07e599c8a_600x.png",
+      stock: 5,
     },
     {
       id: 2,
@@ -16,6 +17,7 @@ const items = [
       price: 4490,
       category: "valijas",
       pictureUrl: "https://cdn.shopify.com/s/files/1/0121/1849/1193/products/VALIJAGRANDEGRIS-2_fca88a53-2a5a-49a7-9fb7-3d7240e76bc1_600x.png?v=1589382296",
+      stock: 5,
     },
     {
       id: 3,
@@ -25,6 +27,7 @@ const items = [
       price: 3890,
       category: "valijas",
       pictureUrl: "https://cdn.shopify.com/s/files/1/0121/1849/1193/products/Aviso_500x.jpg?v=1648505118",
+      stock: 5,
     },
     {
       id: 4,
@@ -34,6 +37,7 @@ const items = [
       price: 3990,
       category: "mochilas",
       pictureUrl: "https://cdn.shopify.com/s/files/1/0121/1849/1193/products/12_d9783248-6fa7-4ad4-b311-6b0c486f14c6_600x.png?v=1632839972",
+      stock: 5,
     },
     {
       id: 5,
@@ -43,6 +47,7 @@ const items = [
       price: 1490,
       category: "mochilas",
       pictureUrl: "https://cdn.shopify.com/s/files/1/0121/1849/1193/products/WhatsAppImage2019-06-03at3.54.02PM_600x.jpg?v=1597261872",
+      stock: 5,
     },
 
   ];

@@ -1,17 +1,15 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
 import NavBar from "./components/NavBar/NavBar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
-
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
-import { CartContextProvider } from "./context/cartContext";
+import { CartContext } from "./context/cartContext";
 
 function App() {
   return (
-    <CartContextProvider>
+    <CartContext.Provider>
     <div className="App">
       <BrowserRouter>
         <NavBar />
@@ -23,7 +21,7 @@ function App() {
         </Routes>
       </BrowserRouter>
     </div>
-    </CartContextProvider>
+    </CartContext.Provider>
   );
 }
 
