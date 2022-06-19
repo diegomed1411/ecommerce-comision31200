@@ -15,7 +15,7 @@ const ItemDetail = ({item}) => {
                 </div>
               </div>
 
-              <div className="col-md-7">
+              <div className="col-md-6">
                 <div className="product-title">{item.title}</div>
                 <div className="product-desc">{item.description}</div>
                 <hr />
