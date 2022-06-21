@@ -1,11 +1,19 @@
 import React from 'react'
-import ItemCount from "../../components/ItemCount/ItemCount";
+import { useContext } from 'react';
+import { CartContext } from '../../context/cartContext';
+import CartItem from '../CartItem/CartItem';
 
 const Cart = () => {
+  const {cartList} = useContext(CartContext)
   return (
-    <div>
-        <ItemCount stock="5" initial="1" />
-    </div>
+    <><ul>
+      {cartList.length < 1 ? (
+        <p>Carrito vacio</p>
+      ) : (
+        cartList.map((product) => <CartItem key={product.item.id} product={product.item}/>)
+      )}
+    </ul>
+    </>
   )
 }
 

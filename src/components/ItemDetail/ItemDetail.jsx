@@ -1,10 +1,16 @@
-import React, {useState} from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/cartContext";
 import ItemCount from "../ItemCount/ItemCount";
 
 const ItemDetail = ({item}) => {
+  const { cartList, addToCart } = useContext(CartContext)
   const onAdd= (cantidad)=>{
+    addToCart({...item, quantity: cantidad })
     console.log(cantidad)
   } 
+
+  console.log(cartList)
+
   return (
     <>
       <div className="container-fluid">
