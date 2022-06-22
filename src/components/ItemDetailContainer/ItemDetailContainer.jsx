@@ -14,8 +14,6 @@ useEffect(() => {
     .catch((err) => console.log(err));
 }, []);
 
-  console.log(detalle)
-
   return (
     <>
       <ItemDetail

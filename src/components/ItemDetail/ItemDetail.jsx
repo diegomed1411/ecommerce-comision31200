@@ -6,10 +6,8 @@ const ItemDetail = ({item}) => {
   const { cartList, addToCart } = useContext(CartContext)
   const onAdd= (cantidad)=>{
     addToCart({...item, quantity: cantidad })
-    console.log(cantidad)
+    console.log(cartList)
   } 
-
-  console.log(cartList)
 
   return (
     <>
