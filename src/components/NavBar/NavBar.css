@@ -1,7 +1,13 @@
+
 #logo{
     max-width: 60px;
 }
 
 #balija{
     max-width: 40px;
+}
+
+NavLink {
+
+    text-decoration: none;
 }
