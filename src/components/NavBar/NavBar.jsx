@@ -12,7 +12,7 @@ const NavBar = () => {
     <>
     <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand href="/">
+    <Navbar.Brand to="/">
       <img src= {logo} alt="logo de avion" id="logo" />
       Tienda Viajes
     </Navbar.Brand>
@@ -23,9 +23,9 @@ const NavBar = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <Nav.Link href="/">Home</Nav.Link>
-        <Nav.Link href="/categoria/valijas">Valijas</Nav.Link>
-        <Nav.Link href="/categoria/mochilas">Mochilas</Nav.Link>
+        <NavLink to="/">Home</NavLink>
+        <NavLink to="/categoria/valijas">Valijas</NavLink>
+        <NavLink to="/categoria/mochilas">Mochilas</NavLink>
         <NavDropdown title="otros sin usar" id="navbarScrollingDropdown">
             <NavLink to="/categoria/valijas">
             <NavDropdown.Item >Valijas</NavDropdown.Item>
@@ -36,7 +36,7 @@ const NavBar = () => {
 
 
           <NavDropdown.Divider />
-          <NavDropdown.Item href="#action7">
+          <NavDropdown.Item to="#action7">
             Ver más destinos
           </NavDropdown.Item>
         </NavDropdown>
