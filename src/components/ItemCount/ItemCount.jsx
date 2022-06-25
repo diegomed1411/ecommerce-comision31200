@@ -24,8 +24,12 @@ const ItemCount = (props) => {
   };
   const [showBtn, setShowBtn] = useState(true);
   const addProduct = () => {
-    props.onAdd(counter);
-    setShowBtn(false);
+    if(counter === 0){
+      alert('Debe indicar cantidades mayores a 0 para agregar al carrito') 
+    } else {
+      props.onAdd(counter);
+      setShowBtn(false);
+    } 
   };
 
   return (

@@ -3,3 +3,28 @@
     transition: 600ms transform;
 }
 
+
+.cartWidgetContainer {
+    display: flex;
+    align-items: baseline;
+    max-height: 40px;
+
+}
+
+.cartWidgetContainer p{
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    color: azure;
+    background-color: red;
+    height: 22px;
+    width: 22px;
+    border-radius: 50%;
+    margin-left: -20px;
+    z-index: 100;
+}
+
+.cartWidgetContainer img{
+    margin-bottom: -25px;
+    z-index: 1;
+}
