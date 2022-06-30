@@ -12,10 +12,10 @@ const NavBar = () => {
     <>
     <Navbar bg="light" expand="lg">
   <Container fluid>
-    <Navbar.Brand to="/">
+    <NavLink to="/">
       <img src= {logo} alt="logo de avion" id="logo" />
       Tienda Viajes
-    </Navbar.Brand>
+    </NavLink>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll" >
       <Nav
