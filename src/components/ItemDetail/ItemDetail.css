@@ -1,0 +1,14 @@
+#item-display{
+    max-width: 300px;
+    border: solid black 1px;
+    margin: 15px;
+}
+
+.product-description-container {
+    padding: 15px;
+
+}
+
+.product-title{
+    color: gray;
+}

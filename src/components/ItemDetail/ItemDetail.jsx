@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import './ItemDetail.css'
 import ItemCount from "../ItemCount/ItemCount";
+import { Row, Col } from "react-bootstrap";
 
 const ItemDetail = ({item}) => {
   const { cartList, addToCart } = useContext(CartContext)
@@ -12,20 +13,19 @@ const ItemDetail = ({item}) => {
 
   return (
     <>
-      <div className="container-fluid">
-        <div className="content-wrapper">
-          <div className="item-container">
-            <div className="container">
-              <div className="col-md-12">
-                <div className="product col-md-3 service-image-left">
+    <div className="container">
+
+    
+  <Row>
+    <Col xs={12} md={6}>                
+    <div className="product-image-container">
                   <center>
                     <img id="item-display" src={item.pictureUrl} alt=""></img>
                   </center>
-                </div>
-              </div>
-
-              <div className="col-md-6">
-                <div className="product-title">{item.title}</div>
+                </div></Col>
+    <Col xs={12} md={6}>
+    <div className="product-description-container">
+    <div className="product-title"><h3>{item.title}</h3></div>
                 <div className="product-desc">{item.description}</div>
                 <hr />
                 <div className="product-price"><span>Precio </span>{item.price}</div>
@@ -34,15 +34,10 @@ const ItemDetail = ({item}) => {
                 <div className="btn-group cart">
                 <ItemCount price= {item.price} stock={item.stock} initial = "0" onAdd={onAdd}/>
                 </div>
-                
-              </div>
-
-              
-
-            </div>
-          </div>
-        </div>
-      </div>
+                </div>
+    </Col>
+  </Row>
+  </div>
     </>
   );
 };

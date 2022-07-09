@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList'
-import getFetch from "../../utils/getFetch";
+//import getFetch from "../../utils/getFetch";
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
 

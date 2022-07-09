@@ -38,6 +38,8 @@ export const CartContextProvider = ({children}) =>{
         return cartList && cartList.some((i) => i.item.id === id);
       };
 
+      
+
     return (
     <CartContext.Provider
     value = {{
