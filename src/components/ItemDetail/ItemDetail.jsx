@@ -5,10 +5,9 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Row, Col } from "react-bootstrap";
 
 const ItemDetail = ({item}) => {
-  const { cartList, addToCart } = useContext(CartContext)
+  const { addToCart } = useContext(CartContext)
   const onAdd= (cantidad)=>{
     addToCart({...item, quantity: cantidad })
-    console.log(cartList)
   } 
 
   return (

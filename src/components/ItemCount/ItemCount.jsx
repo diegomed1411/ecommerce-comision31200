@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ItemCount = (props) => {
+  const onAdd = props.onAdd
   const stock = parseInt(props.stock);
   const [counter, setCounter] = useState(parseInt(props.initial));
   const price = parseInt(props.price);
@@ -27,7 +28,7 @@ const ItemCount = (props) => {
     if(counter === 0){
       alert('Debe indicar cantidades mayores a 0 para agregar al carrito') 
     } else {
-      props.onAdd(counter);
+      onAdd(counter);
       setShowBtn(false);
     } 
   };

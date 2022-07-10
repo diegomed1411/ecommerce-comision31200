@@ -3,7 +3,7 @@ export const CartContext = createContext([])
 
 export const CartContextProvider = ({children}) =>{
     const [cartList, setCartList] = useState([])
-    const addToCart = (item)=>{
+    const addToCart = (item, qty)=>{
         if (IsInCart(item.id)) {
             let itemIndex = cartList.findIndex(item)
             let newCart = cartList.splice(0, itemIndex, item)
@@ -12,6 +12,7 @@ export const CartContextProvider = ({children}) =>{
           } else {
             setCartList([...cartList, {item}])
             alert("Se agrego el producto correctamente");
+            console.log(cartList)
           }
         
     }
@@ -35,7 +36,7 @@ export const CartContextProvider = ({children}) =>{
       }
     
       const IsInCart = (id) => {
-        return cartList && cartList.some((i) => i.item.id === id);
+      return cartList && cartList.some((i) => i.item.id === id);
       };
 
       

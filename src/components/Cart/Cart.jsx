@@ -10,6 +10,7 @@ import { collection, getFirestore, addDoc } from "firebase/firestore"
 
 const Cart = () => {
   const { cartList, EmptyCart, PriceTotal, QuantityTotal } = useContext(CartContext);
+  console.log("actualmente el pedido es",cartList)
   function generarOrden(e){
     e.preventDefault()
     let order={}

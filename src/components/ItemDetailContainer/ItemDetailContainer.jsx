@@ -15,7 +15,7 @@ useEffect(() =>{
   getDoc(queryItem)
   .then(resp => setDetalle({id: resp.id, ...resp.data()}))
   .catch(err => console.log(err))
-},[])
+},[id])
 
 
 //fetch original utilizando getFetch
