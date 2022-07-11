@@ -3,17 +3,17 @@ export const CartContext = createContext([])
 
 export const CartContextProvider = ({children}) =>{
     const [cartList, setCartList] = useState([])
-    const addToCart = (item, qty)=>{
+    const addToCart = (item)=>{
+      console.log("llega a la funcion ",item)
         if (IsInCart(item.id)) {
-            let itemIndex = cartList.findIndex(item)
-            let newCart = cartList.splice(0, itemIndex, item)
-            setCartList(newCart)
-            alert("El producto ya se encuentra en el carrito y se agrergaron "+item.quantity+" articulos al carrito")
+          const items = cartList.filter((product)=> product.item.id !== item.id)
+            setCartList([...items, {item}])
+            alert("El producto ya se encuentra en el carrito y se agrergaron "+cartList+" articulos al carrito")
           } else {
             setCartList([...cartList, {item}])
             alert("Se agrego el producto correctamente");
-            console.log(cartList)
           }
+          console.log("estado del carrito ", cartList)
         
     }
 

@@ -5,10 +5,11 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Row, Col } from "react-bootstrap";
 
 const ItemDetail = ({item}) => {
-  const { addToCart } = useContext(CartContext)
+  const { cartList, addToCart } = useContext(CartContext)
   const onAdd= (cantidad)=>{
     addToCart({...item, quantity: cantidad })
   } 
+  
 
   return (
     <>
@@ -31,7 +32,7 @@ const ItemDetail = ({item}) => {
                 <div className="product-stock"><span>Stock </span>{item.stock}</div>
                 <hr />
                 <div className="btn-group cart">
-                <ItemCount price= {item.price} stock={item.stock} initial = "0" onAdd={onAdd}/>
+                <ItemCount price= {item.price} stock={item.stock} initial = {item.quantity} onAdd={onAdd}/>
                 </div>
                 </div>
     </Col>
