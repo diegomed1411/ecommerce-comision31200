@@ -5,9 +5,10 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
 const ItemCount = (props) => {
+  console.log("llegan a ItemCount las props ",props)
   const onAdd = props.onAdd
   const stock = parseInt(props.stock);
-  const qty = parseInt(props.initial)
+  const qty = props.initial
   const [counter, setCounter] = useState(isNaN(qty)? 0 : qty);
   const price = parseInt(props.price);
   const [subTotal, setSubTotal] = useState(price * counter);

@@ -3,13 +3,22 @@ import { CartContext } from "../../context/cartContext";
 import './ItemDetail.css'
 import ItemCount from "../ItemCount/ItemCount";
 import { Row, Col } from "react-bootstrap";
+import { useEffect, useState } from "react";
 
-const ItemDetail = ({item}) => {
-  const { cartList, addToCart } = useContext(CartContext)
-  const onAdd= (cantidad)=>{
-    addToCart({...item, quantity: cantidad })
-  } 
-  
+function ItemDetail({ item }) {
+  const { cartList, addToCart } = useContext(CartContext);
+  const onAdd = (cantidad) => {
+    addToCart({ ...item, quantity: cantidad });
+  };
+
+  const [actualQty, setActualQty] = useState(0);
+  useEffect(() => {
+      console.log("el id recibido en itemDetail es ", item.id)
+      console.log("el carrito esta de esta forma ", cartList)
+      let actualCartItem = cartList.filter((i) => i.item.id === item.id);
+      setActualQty((actualCartItem[0].item.quantity) ? 0 : actualCartItem);
+      console.log("item de carrito en cuestion", actualCartItem[0].item.quantity)
+  }, []);  
 
   return (
     <>
@@ -32,7 +41,7 @@ const ItemDetail = ({item}) => {
                 <div className="product-stock"><span>Stock </span>{item.stock}</div>
                 <hr />
                 <div className="btn-group cart">
-                <ItemCount price= {item.price} stock={item.stock} initial = {item.quantity} onAdd={onAdd}/>
+                <ItemCount price= {item.price} stock={item.stock} initial= {actualQty} onAdd={onAdd}/>
                 </div>
                 </div>
     </Col>
