@@ -1,15 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import "./ItemCount.css";
 import { Button, Card } from "react-bootstrap";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
+
 const ItemCount = (props) => {
-  console.log("llegan a ItemCount las props ",props)
+  console.log("llega a item count la cantidad de ", props.initial + 100)
   const onAdd = props.onAdd
   const stock = parseInt(props.stock);
-  const qty = props.initial
-  const [counter, setCounter] = useState(isNaN(qty)? 0 : qty);
+  const [counter, setCounter] = useState(8888);
+  useEffect(() => {
+    setCounter(props.initial);
+  }, []);
   const price = parseInt(props.price);
   const [subTotal, setSubTotal] = useState(price * counter);
   useEffect(() => {
