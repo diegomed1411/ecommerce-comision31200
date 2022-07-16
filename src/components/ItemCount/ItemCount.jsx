@@ -5,13 +5,12 @@ import { Link } from "react-router-dom";
 
 
 const ItemCount = (props) => {
-  console.log("llega a item count la cantidad de ", props.initial + 100)
   const onAdd = props.onAdd
   const stock = parseInt(props.stock);
-  const [counter, setCounter] = useState(8888);
+  const [counter, setCounter] = useState(props.initial);
   useEffect(() => {
     setCounter(props.initial);
-  }, []);
+  }, [props.initial]);
   const price = parseInt(props.price);
   const [subTotal, setSubTotal] = useState(price * counter);
   useEffect(() => {
