@@ -1,13 +1,32 @@
 
 #logo{
-    max-width: 60px;
+    max-width: 50px;
 }
 
 #balija{
-    max-width: 40px;
+    max-width: 30px;
 }
 
-NavLink {
+#siteName{
+    font-size: 20px;
+    color:cadetblue;
+}
 
+.linkNavigation, .linkNavigation:visited, .linkNavigation:focus  {
+    text-decoration: none;
+    color: black;
+    margin: 0px 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.linkNavigation:hover{
+    transform: scale(1.1);
+    transition: 600ms transform;
+}
+
+
+span {
     text-decoration: none;
 }

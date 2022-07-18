@@ -4,6 +4,7 @@ import ItemList from '../ItemList/ItemList'
 //import getFetch from "../../utils/getFetch";
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from "firebase/firestore";
+import CarouselHome from '../CarouselHome/CarouselHome';
 
 const ItemListContainer = (props) => {
   const [productos, setProductos] = useState([]);
@@ -39,7 +40,7 @@ useEffect(()=>{
 console.log(productos)
   return (
     <div>
-        <h2>{props.greeting}</h2>
+        <CarouselHome />
         <ItemList items={productos}/>
 
     </div>

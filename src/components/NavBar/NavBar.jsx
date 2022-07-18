@@ -11,10 +11,10 @@ const NavBar = () => {
   return (
     <>
     <Navbar bg="light" expand="lg">
-  <Container fluid>
-    <NavLink to="/">
+  <Container>
+    <NavLink className= "linkNavigation" to="/">
       <img src= {logo} alt="logo de avion" id="logo" />
-      Tienda Viajes
+      <span id="siteName">TIENDA VIAJES</span>
     </NavLink>
     <Navbar.Toggle aria-controls="navbarScroll" />
     <Navbar.Collapse id="navbarScroll" >
@@ -23,25 +23,12 @@ const NavBar = () => {
         style={{ maxHeight: '100px' }}
         navbarScroll
       >
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/categoria/valijas">Valijas</NavLink>
-        <NavLink to="/categoria/mochilas">Mochilas</NavLink>
-        <NavDropdown title="otros sin usar" id="navbarScrollingDropdown">
-            <NavLink to="/categoria/valijas">
-            <NavDropdown.Item >Valijas</NavDropdown.Item>
-            </NavLink>
-            <NavLink to="/categoria/mochilas">
-            <NavDropdown.Item >mochilas</NavDropdown.Item>
-            </NavLink>
+        <NavLink className= "linkNavigation" to="/">Home</NavLink>
+        <NavLink className= "linkNavigation" to="/categoria/valijas">Valijas</NavLink>
+        <NavLink className= "linkNavigation" to="/categoria/mochilas">Mochilas</NavLink>
 
-
-          <NavDropdown.Divider />
-          <NavDropdown.Item to="#action7">
-            Ver más destinos
-          </NavDropdown.Item>
-        </NavDropdown>
       </Nav>
-      <NavLink to="/cart">
+      <NavLink className= "linkNavigation" to="/cart">
         <CartWidjet />
       </NavLink>
       
