@@ -8,7 +8,7 @@ const Item = ({item}) => {
   return (
     <>
       <Card style={{ width: "18rem" }}>
-        <Card.Img variant="top" id="itemPic" src={item.pictureUrl} />
+        <Card.Img variant="top" className="itemPic" src={item.pictureUrl} />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
           <Card.Text>
@@ -26,6 +26,8 @@ const Item = ({item}) => {
 
         </Card.Body>
       </Card>
+
+
     </>
   );
 };
