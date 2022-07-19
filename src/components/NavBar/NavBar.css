@@ -32,8 +32,9 @@
 .linkNavigation:hover{
     transform: scale(1.1);
     transition: 600ms transform;
+    color: green;
+    font-weight: 600;
 }
-
 
 span {
     text-decoration: none;

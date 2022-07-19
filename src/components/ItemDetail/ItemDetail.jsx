@@ -5,23 +5,25 @@ import ItemCount from "../ItemCount/ItemCount";
 import { Row, Col } from "react-bootstrap";
 import { useEffect } from "react";
 
-
 function ItemDetail({ item }) {
   const { cartList, addToCart } = useContext(CartContext);
   const onAdd = (cantidad) => {
     addToCart({ ...item, quantity: cantidad });
   };
 
- const [actualQty, setActualQty] = useState(0)
-useEffect(() => {
-  cartList.map((product)=>{product.item.id === item.id? setActualQty(product.item.quantity): setActualQty(0)})
-}, [cartList])
-
+  const [actualQty, setActualQty] = useState(0);
+  useEffect(() => {
+    cartList.map((product) => {
+      product.item.id === item.id
+        ? setActualQty(product.item.quantity)
+        : setActualQty(0);
+    });
+  }, [cartList]);
 
   return (
     <>
       <div className="container">
-        <Row>
+        <Row className="detailItemContainer">
           <Col xs={12} md={6}>
             <div className="product-image-container">
               <center>
@@ -36,22 +38,25 @@ useEffect(() => {
               </div>
               <div className="product-desc">{item.description}</div>
               <hr />
-              <div className="product-price">
-                <span>Precio </span>
-                {item.price}
-              </div>
-              <div className="product-stock">
-                <span>Stock </span>
-                {item.stock}
-              </div>
-              <hr />
-              <div className="btn-group cart">
-                <ItemCount
-                  price={item.price}
-                  stock={item.stock}
-                  initial= {actualQty}
-                  onAdd={onAdd}
-                />
+              <div className="productInteraction">
+                <div className="product-info">
+                  <div className="product-price">
+                    <span>Precio: $ </span>
+                    {item.price}
+                  </div>
+                  <div className="product-stock">
+                    <span>Stock: </span>
+                    {item.stock}
+                  </div>
+                </div>
+                <div className="btn-group cart">
+                  <ItemCount
+                    price={item.price}
+                    stock={item.stock}
+                    initial={actualQty}
+                    onAdd={onAdd}
+                  />
+                </div>
               </div>
             </div>
           </Col>

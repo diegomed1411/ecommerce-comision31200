@@ -6,56 +6,93 @@ import "./Cart.css";
 import emptyBox from "../../assets/static/106964-shake-a-empty-box.gif";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
-import { collection, getFirestore, addDoc } from "firebase/firestore"
+import { collection, getFirestore, addDoc } from "firebase/firestore";
 
 const Cart = () => {
-  const { cartList, EmptyCart, PriceTotal, QuantityTotal } = useContext(CartContext);
-  console.log("actualmente el pedido es",cartList)
-  function generarOrden(e){
-    e.preventDefault()
-    let order={}
-    order.buyer = {name: 'Diego', email: 'd@mail.com', phone: '59899887766'}
-    order.totalAmount = PriceTotal()
+  const { cartList, EmptyCart, PriceTotal, QuantityTotal } =
+    useContext(CartContext);
+  console.log("actualmente el pedido es", cartList);
+  function generarOrden(e) {
+    e.preventDefault();
+    let order = {};
+    order.buyer = { name: "Diego", email: "d@mail.com", phone: "59899887766" };
+    order.totalAmount = PriceTotal();
 
-    order.items = cartList.map(i =>{
-      const id= i.id
-      const name = i.title
-      const price= i.price
-      const quantity = i.quantity
+    order.items = cartList.map((i) => {
+      const id = i.id;
+      const name = i.title;
+      const price = i.price;
+      const quantity = i.quantity;
 
-      return {id, name, price, quantity}
-    })
-    const db = getFirestore()
-    const orderCollection = collection(db, 'orders')
-    addDoc(orderCollection, order)
-    .then(resp=> console.log(resp))
-    console.log(order)
-
+      return { id, name, price, quantity };
+    });
+    const db = getFirestore();
+    const orderCollection = collection(db, "orders");
+    addDoc(orderCollection, order).then((resp) => console.log(resp));
+    console.log(order);
   }
   return (
     <>
-      <ul>
+      <div>
         {cartList.length < 1 ? (
           <>
-            <h4>Carrito Vacio 😦</h4>
-            <img className="emptyBoxGif" src={emptyBox} alt="carrito vacio" />
-            <br />
-            <Link to="/">
-              <Button variant="outline-success">Ir de compras</Button>
-            </Link>
+            <div className="emptyCart">
+              <h4>Carrito Vacio 😦</h4>
+              <img className="emptyBoxGif" src={emptyBox} alt="carrito vacio" />
+              <br />
+              <Link to="/">
+                <Button variant="outline-success">Ir de compras</Button>
+              </Link>
+            </div>
           </>
         ) : (
           <>
-            {cartList.map((product) => (
-              <CartItem key={product.item.id} product={product.item} />
-            ))}
-            <Button className="cartBtnAction" variant="outline-danger" onClick={EmptyCart}>
+            <table className="table container">
+              <thead>
+                <tr>
+                  <th scope="col">Articulo</th>
+                  <th scope="col"></th>
+                  <th scope="col" className="tableValues">Cantidad</th>
+                  <th scope="col" className="tableValues">Precio</th>
+                  <th scope="col" className="tableValues">Subtotal</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody>
+              {cartList.map((product) => (
+                <CartItem key={product.item.id} product={product.item} />
+              ))}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Total Cantidades</th>
+                  <th scope="col" className="tableValues">{QuantityTotal()}</th>
+                  <th scope="col" className="tableValues">Total</th>
+                  <th scope="col" className="tableValues">$ {PriceTotal()}</th>
+                  <th scope="col"></th>
+                </tr>
+              </tfoot>
+            </table>
+            <Button
+              className="cartBtnAction"
+              variant="outline-danger"
+              onClick={EmptyCart}
+            >
               Borrar carrito
             </Button>
             <Link to="/">
-              <Button className="cartBtnAction" variant="outline-primary">Seguir comprando</Button>
+              <Button className="cartBtnAction" variant="outline-primary">
+                Seguir comprando
+              </Button>
             </Link>
-            <Button className="cartBtnAction" variant="outline-success" onClick={generarOrden}>Terminar Compra</Button>
+            <Button
+              className="cartBtnAction"
+              variant="outline-success"
+              onClick={generarOrden}
+            >
+              Terminar Compra
+            </Button>
 
             <p>El precio total de los productos es {PriceTotal()} </p>
             {QuantityTotal() < 1 ? (
@@ -65,7 +102,7 @@ const Cart = () => {
             )}
           </>
         )}
-      </ul>
+      </div>
     </>
   );
 };

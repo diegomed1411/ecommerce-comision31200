@@ -7,7 +7,7 @@
 .counterControler {
     margin: 1px 5px;
     min-width: 20px;
-    color: blue;
+    color: cadetblue;
     font-weight: bolder;
 
 }
@@ -15,4 +15,10 @@
 .subtotalAmount {
     text-align: center;
     width: 100%;
+}
+
+.quantity h5{
+    color: cadetblue;
+    font-weight: 600;
+    font-size: 18px;
 }

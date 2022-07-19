@@ -7,21 +7,21 @@ import { Link } from "react-router-dom";
 const Item = ({item}) => {
   return (
     <>
-      <Card style={{ width: "18rem" }}>
+      <Card className="itemCard" style={{ width: "15rem" }}>
         <Card.Img variant="top" className="itemPic" src={item.pictureUrl} />
         <Card.Body>
           <Card.Title>{item.title}</Card.Title>
-          <Card.Text>
+          <Card.Text className="cardShortDescription">
             {item.shortDescription}
           </Card.Text>
-          <Card.Text>
-            {item.price}
+          <Card.Text className="cardPrice">
+            <span>$ </span>{item.price}
           </Card.Text>
-          <Card.Text>
-            {item.id}
+          <Card.Text className="cardItemCode">
+            <span>cod: </span>{item.id}
           </Card.Text>
           <Link to={`/detalle/${item.id}`}>
-          <Button variant="primary">Ver Detalles</Button>
+          <Button className="btnDetalles" variant="primary">Ver Detalles</Button>
           </Link>
 
         </Card.Body>

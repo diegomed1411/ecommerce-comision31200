@@ -7,12 +7,11 @@ const ItemList = ({ items }) => {
     <>
       <div class="container">
         <div class="row">
-          <div className="d-flex">
+          <div className="d-flex flex-wrap justify-content-around">
             {items.map((producto) => (
               <Item key={producto.id} item={producto} />
             ))}
           </div>
-
         </div>
       </div>
     </>

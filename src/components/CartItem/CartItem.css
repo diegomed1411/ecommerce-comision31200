@@ -1,16 +1,33 @@
-.imgCartItem{
-    max-width: 50px;
-    max-height: 70px;
+.imgTable{
+    text-align: center;
 }
 
-li{
-    list-style: none;
-    border: solid 1px black;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+.imgTable:hover{
+    transform: scale(1.1);
+    transition: 600ms transform;
 }
 
-li span{
-    margin: 0 5px
+.imgTable img{
+    max-width: 40px;
+    height: 40px;
+}
+
+
+td{
+    height: 40px;
+    vertical-align: middle;
+}
+
+.tableValues{
+    text-align: center;
+}
+
+.trashIcon {
+    width: 25px;
+    cursor: pointer;
+}
+
+.trashIcon:hover{
+    transform: scale(1.1);
+    transition: 600ms transform;
 }

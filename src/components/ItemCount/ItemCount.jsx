@@ -22,7 +22,7 @@ const ItemCount = (props) => {
     }
   };
   const quitarItem = () => {
-    if (counter > parseInt(props.initial)) {
+    if (counter > 0) {
       setCounter(counter - 1);
     }
   };
@@ -55,7 +55,7 @@ const ItemCount = (props) => {
           <div className="subTotal">
             <h5>Sub Total</h5>
             <Card.Title className="counterPanel d-flex justify-content-between">
-              <span className="subtotalAmount">{subTotal}</span>
+              <span className="subtotalAmount">$ {subTotal}</span>
             </Card.Title>
           </div>
           <div className="agregaCarritoButtonContainer">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useContext } from 'react'
-import balija from '../../assets/static/icono_equipaje.png'
+import balija from '../../assets/static/icono-bag.png'
 import { CartContext } from '../../context/cartContext'
 import './CartWidget.css'
 

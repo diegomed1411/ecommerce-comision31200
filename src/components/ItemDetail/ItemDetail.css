@@ -1,7 +1,11 @@
 #item-display{
-    max-width: 300px;
-    border: solid black 1px;
+    max-width: 250px;
+    max-height: 350px;
     margin: 15px;
+}
+
+.detailItemContainer{
+    padding: 10px;
 }
 
 .product-description-container {
@@ -9,6 +13,29 @@
 
 }
 
-.product-title{
-    color: gray;
+.product-title h3{
+    color: cadetblue;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.product-desc{
+    font-size: 14px;
+
+}
+
+.productInteraction{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-info {
+    display: block;
+}
+
+.product-price ,.product-stock{
+    font-weight: 600;
+    margin: 10px;
+    color: cadetblue;
 }

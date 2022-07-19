@@ -1,3 +1,8 @@
+.emptyCart{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 h4 {
     margin: 25px;
 }
@@ -8,4 +13,9 @@ h4 {
 
 .cartBtnAction{
     margin: 10px;
+}
+
+th {
+    color: cadetblue;
+    font-weight: 600;
 }
