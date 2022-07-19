@@ -15,7 +15,9 @@ const CartItem = ({product}) => {
           <img className="imgCartItem" src={product.pictureUrl} alt="" /> 
           </Link>  
           </th>
-        <td>{product.title}</td>
+        <td>{product.title}
+        <p className="idCartItem">cod: {product.id} | categoria: {product.category}</p>
+        </td>
         <td className="tableValues">{product.quantity}</td>
         <td className="tableValues">$ {product.price}</td>
         <td className="tableValues">$ {product.price*product.quantity}</td>          

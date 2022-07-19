@@ -6,30 +6,44 @@ import "./Cart.css";
 import emptyBox from "../../assets/static/106964-shake-a-empty-box.gif";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
-import { collection, getFirestore, addDoc } from "firebase/firestore";
+import { collection, getFirestore, doc, addDoc, serverTimestamp, setDoc } from "firebase/firestore";
 
 const Cart = () => {
   const { cartList, EmptyCart, PriceTotal, QuantityTotal } =
-    useContext(CartContext);
+    useContext(CartContext)
   console.log("actualmente el pedido es", cartList);
   function generarOrden(e) {
-    e.preventDefault();
-    let order = {};
-    order.buyer = { name: "Diego", email: "d@mail.com", phone: "59899887766" };
-    order.totalAmount = PriceTotal();
+    e.preventDefault()
+    let order = {}
+    order.buyer = { name: "Diego", email: "d@mail.com", phone: "59899887766" }
+    order.date = serverTimestamp()
+    order.totalAmount = PriceTotal()
 
     order.items = cartList.map((i) => {
-      const id = i.id;
-      const name = i.title;
-      const price = i.price;
-      const quantity = i.quantity;
+      const id = i.item.id
+      const name = i.item.title
+      const price = i.item.price
+      const quantity = i.item.quantity
 
       return { id, name, price, quantity };
     });
-    const db = getFirestore();
-    const orderCollection = collection(db, "orders");
-    addDoc(orderCollection, order).then((resp) => console.log(resp));
-    console.log(order);
+    console.log(order)
+    const createOrderInFirestore = async() =>{
+      const db = getFirestore()
+      const newOrderRef= doc(collection(db, "orders"))
+      await setDoc(newOrderRef, order)
+      return newOrderRef
+    }
+
+    createOrderInFirestore()
+      .then(result => alert('se creo la orden '+ result.id))
+      .then(EmptyCart())
+      .catch(err => console.log(err))
+
+
+
+    // addDoc(orderCollection, order).then((resp) => console.log(resp));
+    // console.log(order);
   }
   return (
     <>
@@ -74,6 +88,7 @@ const Cart = () => {
                 </tr>
               </tfoot>
             </table>
+
             <Button
               className="cartBtnAction"
               variant="outline-danger"
