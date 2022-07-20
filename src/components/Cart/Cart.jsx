@@ -4,7 +4,7 @@ import { CartContext } from "../../context/cartContext";
 import CartItem from "../CartItem/CartItem";
 import "./Cart.css";
 import emptyBox from "../../assets/static/106964-shake-a-empty-box.gif";
-import { Link } from "react-router-dom";
+import { Link  } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
 import { collection, getFirestore, doc, updateDoc, serverTimestamp, setDoc, increment } from "firebase/firestore";
 
@@ -35,8 +35,19 @@ const Cart = () => {
       return newOrderRef
     }
 
+    const updateStock = async() => {
+      const db = getFirestore()
+      cartList.forEach(i => {
+        const itemToUpdate = doc(db, "items", i.item.id)
+        updateDoc(itemToUpdate, {stock: increment(-i.item.quantity)})      
+      });
+    }
+
+
+
     createOrderInFirestore()
       .then(result => alert('se creo la orden '+ result.id))
+      .then(updateStock())
       .then(EmptyCart())
       .catch(err => console.log(err))
 
@@ -45,6 +56,8 @@ const Cart = () => {
     // addDoc(orderCollection, order).then((resp) => console.log(resp));
     // console.log(order);
   }
+
+
   return (
     <>
       <div>
@@ -89,6 +102,8 @@ const Cart = () => {
               </tfoot>
             </table>
 
+<div className="container">
+
             <Button
               className="cartBtnAction"
               variant="outline-danger"
@@ -109,12 +124,7 @@ const Cart = () => {
               Terminar Compra
             </Button>
 
-            <p>El precio total de los productos es {PriceTotal()} </p>
-            {QuantityTotal() < 1 ? (
-              <p> </p>
-            ) : (
-              <p>La cantidad total del carrito es {QuantityTotal()}</p>
-            )}
+</div>
           </>
         )}
       </div>

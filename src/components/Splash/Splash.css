@@ -1,0 +1,52 @@
+.splash{
+    width: 100%;
+    min-height: 90vh;
+    background: url("https://cdn.pixabay.com/photo/2016/11/22/19/25/man-1850181_960_720.jpg") center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.splashContainer{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+    
+
+.textContainer{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5%;
+}
+.textContainer h1{
+    display: flex;
+    flex-wrap: wrap;
+    font-weight: 600;
+    font-size: 60px;
+    color: cadetblue;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 1px rgba(255, 255, 255, 0.8);
+}
+
+.textContainer h2{
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 1px cadetblue;
+    margin-top: 15px;
+}
+
+@media only screen and (max-width: 768px) {
+.textContainer h1{
+    font-size: 35px;
+    }
+.textContainer h2{
+    font-size: 20px;
+}
+}

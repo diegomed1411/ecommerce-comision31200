@@ -6,7 +6,7 @@ import ItemListContainer from "./components/ItemListContainer/ItemListContainer"
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart";
 import { CartContextProvider } from "./context/cartContext";
-import Footer from "./components/Footer/Footer";
+import Home from "./components/Home/Home";
 
 function App() {
   return (
@@ -14,13 +14,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar />
-        <Routes>
-          <Route index path="/" element={<ItemListContainer greeting="hola"/>} />
+        <Routes id="content">
+          <Route index path="/" element={<Home />}/>
           <Route path="/categoria/:categoriaId" element={<ItemListContainer />} />
           <Route path="/detalle/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<Cart />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </div>
     </CartContextProvider>
