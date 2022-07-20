@@ -1,0 +1,18 @@
+.footerContainer{
+    margin: 10px 0px 0px 0px;
+    padding: 5px 0;
+    text-align: center;
+    background-color: cadetblue;
+    color: azure;
+}
+
+.footerContainer p{
+    margin: 0;
+}
+
+.footerContainer a{
+    text-decoration: none;
+    color: azure;
+}
+
+

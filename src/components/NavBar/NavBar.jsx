@@ -30,6 +30,9 @@ const NavBar = () => {
               <NavLink className="linkNavigation" to="/categoria/mochilas">
                 Mochilas
               </NavLink>
+              <NavLink className="linkNavigation" to="/categoria/carpas">
+                Carpas
+              </NavLink>
             </Nav>
             <NavLink className="linkNavigation" to="/cart">
               <CartWidjet />

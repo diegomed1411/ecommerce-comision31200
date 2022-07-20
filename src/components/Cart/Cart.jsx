@@ -6,7 +6,7 @@ import "./Cart.css";
 import emptyBox from "../../assets/static/106964-shake-a-empty-box.gif";
 import { Link } from "react-router-dom";
 import Button from "react-bootstrap/esm/Button";
-import { collection, getFirestore, doc, addDoc, serverTimestamp, setDoc } from "firebase/firestore";
+import { collection, getFirestore, doc, updateDoc, serverTimestamp, setDoc, increment } from "firebase/firestore";
 
 const Cart = () => {
   const { cartList, EmptyCart, PriceTotal, QuantityTotal } =
