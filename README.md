@@ -15,5 +15,5 @@ Aplicaciones prácticas trabajadas en el proyecto:
 -- Eventos
 -- Context
 -- Técnicas de Rendering
--- Firebase
+- Firebase
 
